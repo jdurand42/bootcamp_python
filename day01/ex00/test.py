@@ -6,7 +6,7 @@
 #    By: jdurand <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/14 12:57:50 by jdurand           #+#    #+#              #
-#    Updated: 2020/01/14 13:50:45 by jdurand          ###   ########.fr        #
+#    Updated: 2020/01/14 16:11:33 by jdurand          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,11 @@ import sys
 import datetime
 from recipe import recipe
 from book import book
+
+
+
+# it's all working but i don't have the check in add_recipe because of the same name
+
 
 kebab = recipe(1)
 kebab2 = recipe(1)
@@ -34,7 +39,7 @@ cookbook.add_recipe(kebab4)
 
 cookbook.get_recipes_by_types('lunch')
 cookbook.get_recipes_by_types('dessert')
-print(type(recipe))
+#print(type(recipe))
 #cookbook.add_recipe(12)
 print("-------TEST ON TIME AND SEARCHES--------")
 cookbook.get_recipe_by_name('kebab')

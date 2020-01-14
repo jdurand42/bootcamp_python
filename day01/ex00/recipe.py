@@ -6,7 +6,7 @@
 #    By: jdurand <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/14 11:52:50 by jdurand           #+#    #+#              #
-#    Updated: 2020/01/14 12:57:10 by jdurand          ###   ########.fr        #
+#    Updated: 2020/01/14 16:11:53 by jdurand          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,7 +71,13 @@ class recipe:
 		"""return the string to print with the recipe info"""
 		txt = self.name + ": " + self.description
 		return txt
-
+	
+	def check_type(self, arg):
+		if type(self) is type(arg):
+			return 1
+		else:
+			return 0
+#print(str(kebab))
 #gen = recipe()
 #gen.print_recipe()
 #kebab = recipe(1)

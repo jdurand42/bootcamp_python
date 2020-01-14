@@ -6,11 +6,11 @@
 #    By: jdurand <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/14 11:48:49 by jdurand           #+#    #+#              #
-#    Updated: 2020/01/14 16:12:11 by jdurand          ###   ########.fr        #
+#    Updated: 2020/01/14 19:19:59 by jdurand          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-from recipe import recipe
+from recipe import Recipe
 import sys
 import datetime
 
@@ -19,7 +19,7 @@ def	check_if_name(recipes_list, name):
 		if name == recipe.name:
 			recipe.print_recipe()
 
-class book:
+class Book:
 	name = ""
 	creation_date = datetime.datetime.now()
 	last_update = datetime.datetime.now()
@@ -33,6 +33,9 @@ class book:
 		#if str(type(b)) != str(type(recipe)):
 		#	print("Not right object")
 		#	sys.exit()
+		if isinstance(recipe, Recipe) == False:
+			print("bad type")
+			sys.exit()
 		if recipe.recipe_type in self.recipes_list:
 			self.recipes_list[recipe.recipe_type].append(recipe)
 		else:

@@ -6,7 +6,7 @@
 #    By: jdurand <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/14 11:52:50 by jdurand           #+#    #+#              #
-#    Updated: 2020/01/14 16:11:53 by jdurand          ###   ########.fr        #
+#    Updated: 2020/01/14 19:19:15 by jdurand          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ class enter_recipe:
 			print("Error, the recipe is not valid, aborting")
 			sys.exit()
 
-class recipe:
+class Recipe:
 	"""A recipe"""
 	name = ""
 	cooking_lvl = 0

@@ -6,7 +6,7 @@
 #    By: jdurand <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/14 18:34:54 by jdurand           #+#    #+#              #
-#    Updated: 2020/01/14 18:42:16 by jdurand          ###   ########.fr        #
+#    Updated: 2020/01/14 19:21:55 by jdurand          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,10 +44,10 @@ def opp(vector_, other, code = 0):
 			new_vec_list.append(vector_.values[i] * other)
 		i += 1	
 	i += 1
-	new_vec = vector(new_vec_list)
+	new_vec = Vector(new_vec_list)
 	return new_vec
 
-class vector:
+class Vector:
 	#values
 	#size
 	"""

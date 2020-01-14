@@ -6,7 +6,7 @@
 #    By: jdurand <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/14 19:22:18 by jdurand           #+#    #+#              #
-#    Updated: 2020/01/14 20:12:49 by jdurand          ###   ########.fr        #
+#    Updated: 2020/01/14 20:31:50 by jdurand          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,11 @@ def generator(text, sep=" ", option=None):
 	for char in sep:
 		s = text.replace(char, sep[0])
 	lst = s.split(sep[0])
+	i = 0
+	while i < len(lst):
+		if lst[i] == "":
+			lst.pop(i)
+		i += 1
 	print(lst)
 	if option == "shuffle":
 		lst = shuffle(lst)

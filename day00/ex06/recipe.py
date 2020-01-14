@@ -6,17 +6,17 @@
 #    By: jdurand <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/13 18:34:19 by jdurand           #+#    #+#              #
-#    Updated: 2020/01/13 20:52:19 by jdurand          ###   ########.fr        #
+#    Updated: 2020/01/14 11:34:18 by jdurand          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-cookbook = {	'sandwich' : {	'ingredients' : ("ham", "bread", "cheese", "tomatoes"),
+cookbook = {	'sandwich' : {	'ingredients' : ["ham", "bread", "cheese", "tomatoes"],
 				'meal' : 'lunch',
 				'prep_time' : "10"},
-		'cake' : {	'ingredients' : ('flour', 'sugar', 'eggs'),
+		'cake' : {	'ingredients' : ['flour', 'sugar', 'eggs'],
 				'meal' : "dessert",
 				'prep_time' : "60"},
-		'salad' : {	'ingredients' : ('avocado', 'arugula', 'tomatoes', 'spinach'),
+		'salad' : {	'ingredients' : ['avocado', 'arugula', 'tomatoes', 'spinach'],
 				'meal' : "lunch",
 				'prep_time' : "15"}
 	}
@@ -66,7 +66,7 @@ def del_recipe(recipe):
 	del(cookbook[recipe])
 	print("Recipe successfully deleted : " + recipe + '\n')
 
-def add_recipe(name = "", ingredients = (), meal = "", prep_time = ""):
+def add_recipe(name = "", ingredients = [], meal = "", prep_time = ""):
 	if len(name) == 0 or len(ingredients) == 0 or len(meal) == 0 or len(prep_time) == 0:
 		print("Recipe not correctly formated :\nadd_recipe('name', ('ing1', 'ing2', ect ..'), 'meal', 'time'\n")
 		return
@@ -78,6 +78,10 @@ def print_menu():
 	print("Select an option")
 	print("1: Add a recipe\n2: Delete a recipe\n3: Print a recipe\n4: Print the cookbook\n5: Quit")
 
+def input_ing():
+	ingredient_s = input()
+	return ingredient_s.split()
+
 #print_menu()
 choice = "0"
 while choice != "5":
@@ -86,11 +90,11 @@ while choice != "5":
 	print("\n")
 	if choice == "1":
 		print("Enter name: ", end = "")
-		name = input("")
-		print("Enter ingredients ('ing1', 'ing2' ", end = "")
-		ingredients = input(())
+		name = input()
+		print("Enter ingredients ", end = "")
+		ingredients = input_ing()
 		print("Enter meal: ", end = "")
-		meal = input("")
+		meal = input()
 		print("Enter prep time: ", end = "")
 		prep_time = input()
 		add_recipe(name, ingredients, meal, prep_time)

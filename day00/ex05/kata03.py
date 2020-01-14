@@ -6,7 +6,7 @@
 #    By: jdurand <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/13 18:01:00 by jdurand           #+#    #+#              #
-#    Updated: 2020/01/13 18:07:52 by jdurand          ###   ########.fr        #
+#    Updated: 2020/01/13 22:06:46 by jdurand          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,4 +17,4 @@ pad_len = 41 - p_len
 while pad_len > 0:
 	print("-", end = "")
 	pad_len -= 1
-print(phrase[0:41])
+print(phrase[0:41], end = "")

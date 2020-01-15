@@ -5,18 +5,6 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jdurand <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2020/01/14 18:34:54 by jdurand           #+#    #+#              #
-#    Updated: 2020/01/14 19:21:55 by jdurand          ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    vector.py                                          :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: jdurand <marvin@42.fr>                     +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/14 14:38:40 by jdurand           #+#    #+#              #
 #    Updated: 2020/01/14 18:32:54 by jdurand          ###   ########.fr        #
 #                                                                              #
@@ -42,7 +30,7 @@ def opp(vector_, other, code = 0):
 			new_vec_list.append(vector_.values[i] / other)
 		elif code == 3:
 			new_vec_list.append(vector_.values[i] * other)
-		i += 1	
+		i += 1
 	i += 1
 	new_vec = Vector(new_vec_list)
 	return new_vec
@@ -62,7 +50,7 @@ class Vector:
 			while i < len(vec_list):
 				if isinstance(vec_list[i], float) == False:
 					error("One of the param of the list isn't a float")
-				i += 1 
+				i += 1
 			self.values = vec_list
 			self.size = len(vec_list)
 			if self.size < 2:
@@ -99,9 +87,9 @@ class Vector:
 					i += 1
 				self.size = len(self.values)
 			else:
-				error("No no no")	
+				error("No no no")
 		else:
-			error("Not quite right: give vector([float, float, ...]) or vector(size) or vector((int, int))")		
+			error("Not quite right: give vector([float, float, ...]) or vector(size) or vector((int, int))")
 	def print_vector(self, name = "No name"):
 		print(name, end = ": ")
 		print(self.values)
@@ -109,13 +97,13 @@ class Vector:
 
 	def __str__(self):
 		return str(self.values) + " || size = " + str(self.size)
-	
+
 	def __rpr__(self):
 		return "Like str, but now it's official"
 
 	def __add__(self, other):
-		return opp(self, other, 0) 
-	
+		return opp(self, other, 0)
+
 	def __sub__(self, other):
 		return opp(self, other, 1)
 
@@ -126,4 +114,13 @@ class Vector:
 			error("Division by zero")
 		return opp(self, other, 2)
 	def __mul__(self, other):
-		return opp(self, other, 3)	
+		return opp(self, other, 3)
+
+	def __radd__(self, other):
+		return opp(self, other, 0)
+	def __rsub__(self, other):
+		return opp(self, other, 1)
+	def __rtruediv__(self, other):
+		return opp(self, other, 2)
+	def __rmul__(self, other):
+		return opp(self, other, 3)

@@ -12,17 +12,19 @@
 
  # function prototype
 import re
-import random
+import datetime
 
 def shuffle(lst):
 	range_max = len(lst) - 1
-	while range_max >= 0:
-		rand = random.randint(0, range_max)
+	while range_max > 0:
+		seed = int(str(datetime.datetime.now())[20:25])
+		rand = (seed + 0) % range_max
+		print(rand)
 		b = lst[range_max]
 		lst[range_max] = lst[rand]
 		lst[rand] = b
 		range_max -= 1
-		return lst
+	return lst
 
 def generator(text, sep=" ", option=None):
 	'''Option is an optional arg, sep is mandatory'''
@@ -45,11 +47,20 @@ def generator(text, sep=" ", option=None):
 		lst = shuffle(lst)
 	if option == "ordered":
 		lst.sort()
-		
-	i = 0
-	while i < len(lst):
-		yield lst[i]
-		i += 1
+	if option == "unique":
+		lst = set(lst)
 
-for word in generator("111 ;222 ;333; 444; 5 ;6", ";. ", "ordered"):
+	for el in lst:
+		yield el
+
+lst = [0, 1, 1, 5]
+lst = set(lst)
+print(lst)
+#s = str(datetime.datetime.now())
+#print(int(s[20:25]))
+#print(datetime.datetime.now())
+#print((int(str(datetime.datetime.now())[20:25]) + 0) % 50)
+#for word in generator("111 ;222 ;333; 444; 5 ;6 dlahsd [asdha has;dh asdh assdhaspod hqwoehqwiihdask ;adsh;akskdh  hhdqwhd adk dqw; dqw]", ";. ", "shuffle"):
+for word in generator("richard richard henri pascal henir", " ", "unique"):
 	print(word)
+#	pass

@@ -4,15 +4,18 @@ def what_are_the_vars(*args, **kwargs):
 	"""Yeah kwargs"""
 	var_id = 0
 	obj = ObjectC
+
+	for kwarg in kwargs:
+		setattr(obj, str(kwarg), kwargs[kwarg])
+
 	for arg in args:
 		setattr(obj, "var_" + str(var_id), arg)
 		var_id += 1
+
 	for kwarg in kwargs:
 		if "var_" in kwarg:
 			return None
-	for kwarg in kwargs.values():
-		setattr(obj, "var_" + str(var_id), kwarg)
-		var_id += 1
+
 	while getattr(obj, "var_" + str(var_id), False) != False:
 		delattr(obj, "var_" + str(var_id))
 		var_id += 1

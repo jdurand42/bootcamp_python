@@ -39,7 +39,7 @@ class ColorFilter():
 
 	def celluloid(self, array, treshold = 45):
 		def lining(n):
-			return np.linspace(n, 0, 70)[treshold]
+			return np.linspace(0, n, 70)[treshold]
 		return np.apply_along_axis(lining, 2, array)
 
 	def bright(self, array, treshold = 20):
@@ -61,12 +61,12 @@ tab = img.load("42AI.png")
 color = ColorFilter()
 #img.display(tab)
 #img.display(color.invert(tab))
-img.display(color.to_blue(tab))
+#img.display(color.to_blue(tab))
 #img.display(color.to_green(tab))
 #img.display(color.to_red(tab))
 #print(np.linspace(0.5, 0, 15))
-#cell = color.celluloid(tab)
-#img.display(cell)
+cell = color.celluloid(tab)
+img.display(cell)
 
 """
 	Ni, Nk = a.shape[:axis], a.shape[axis+1:]

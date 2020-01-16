@@ -6,7 +6,7 @@ from random import randint
 
 def log(func):
 
-	@functools.wraps(func)
+#	@functools.wraps(func)
 #	def inner(*args, **kwargs):
 #		print("(cmaxime)Running: " + str(args[0]))
 	def wrapper_timer(*args, **kwargs):

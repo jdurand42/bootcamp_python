@@ -42,6 +42,6 @@ tab = img.load("42AI.png")
 scrap = ScrapBooker()
 
 img.display(scrap.crop(tab, (30, 30), (25, 25)))
-img.display(scrap.thin(tab, 5, 1))
+img.display(scrap.thin(tab, 5, 0))
 img.display(scrap.juxtapose(tab, 5, 0))
 img.display(scrap.mosaic(tab, (5, 6)))

@@ -5,8 +5,8 @@ from random import random
 class NumPyCreator(object):
 	def __init__(self):
 		pass
-	def from_list(self, lst):
-		return np.array(lst)
+	def from_list(self, lst, :
+		return np.array(lst, dtype)
 	def from_tuple(self, tuple):
 		return np.array(tuple)
 	def from_iterable(self, iter):

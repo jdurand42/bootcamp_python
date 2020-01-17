@@ -12,7 +12,6 @@ def youngestFellah(df, year):
 	dict['F'] = youngest_female.iloc[0, 3]
 	return dict
 
-
 file = FileLoader()
 df = file.load("athlete_events.csv", ',')
 year_1992 = youngestFellah(df, 1992)

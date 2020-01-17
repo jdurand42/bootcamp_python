@@ -19,5 +19,5 @@ class ImageProcessor(object):
 		plt.imshow(array)
 		plt.show()
 
-img = ImageProcessor()
+#img = ImageProcessor()
 #img.display(img.load("42AI.png"))
